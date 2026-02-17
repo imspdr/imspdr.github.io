@@ -15,7 +15,7 @@ module.exports = (env, argv) => {
     output: {
       path: path.resolve(__dirname, 'docs'),
       filename: 'bundle.js',
-      publicPath: isProduction ? '/template-project/' : '/',
+      publicPath: 'auto',
       clean: true,
     },
     resolve: {
@@ -40,16 +40,19 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new ModuleFederationPlugin({
-        name: 'template',
+        name: 'shell',
         filename: 'remoteEntry.js',
-        exposes: {
-          './App': './src/App',
+        remotes: {
+          kospi200: 'kospi200@https://imspdr.github.io/kospi200/remoteEntry.js',
+          japword: 'japword@https://imspdr.github.io/japword/remoteEntry.js',
+          newvideo: 'newvideo@https://imspdr.github.io/new-video/remoteEntry.js',
         },
         shared: {
           react: { singleton: true, requiredVersion: deps.react },
           'react-dom': { singleton: true, requiredVersion: deps['react-dom'] },
           '@emotion/react': { singleton: true, requiredVersion: deps['@emotion/react'] },
           '@emotion/styled': { singleton: true, requiredVersion: deps['@emotion/styled'] },
+          '@tanstack/react-query': { singleton: true, requiredVersion: deps['@tanstack/react-query'] },
         },
       }),
       new HtmlWebpackPlugin({

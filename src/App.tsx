@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { BrowserRouter, Navigate, Route, Routes, useNavigate } from 'react-router-dom';
 import {
   Layout,
   ModalProvider,
@@ -21,16 +20,12 @@ const queryClient = new QueryClient({
 });
 
 const App: FC = () => {
-  const basename = process.env.NODE_ENV === 'production' ? '/template-project' : '/';
-
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <ToastProvider>
           <ModalProvider>
-            <BrowserRouter basename={basename}>
-              <AppLayout />
-            </BrowserRouter>
+            <AppLayout />
           </ModalProvider>
         </ToastProvider>
       </ThemeProvider>
@@ -39,17 +34,9 @@ const App: FC = () => {
 };
 
 const AppLayout: FC = () => {
-  const navigate = useNavigate();
-
   return (
-    <Layout
-      title="Template Project"
-      onHomeClick={() => navigate('/')}
-    >
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+    <Layout title="IMSPDR">
+      <HomePage />
     </Layout>
   );
 };

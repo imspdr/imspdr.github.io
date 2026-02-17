@@ -982,10 +982,10 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.4.0.tgz#5e13fac887f08c44f76b0ccaf3370eb00fec9bb6"
   integrity sha512-snKqtPW01tN0ui7yu9rGv69aJXr/a/Ywvl11sUjNtEcRc+ng/mQriFL0wLXMef74iHa/EkftbDzU9F8iFbH+zg==
 
-"@imspdr/ui@^1.0.2":
-  version "1.0.2"
-  resolved "https://npm.pkg.github.com/download/@imspdr/ui/1.0.2/79dbabd698177732ecca52ad0203e2f2b2022980#79dbabd698177732ecca52ad0203e2f2b2022980"
-  integrity sha512-vHv/e7LQy0ntk0/+ZqDrqT3rK4Ks4D9TKUSIR0ryzxERykENaBBYc7LxXX22SfnERjMniK6aNtZxSO0SLpOkxw==
+"@imspdr/ui@^1.0.5":
+  version "1.0.6"
+  resolved "https://npm.pkg.github.com/download/@imspdr/ui/1.0.6/17c15c2cb4a242c2bbb985ff21c7209c6b8acb64#17c15c2cb4a242c2bbb985ff21c7209c6b8acb64"
+  integrity sha512-2wu2xuAQF68EhlGbNMiehrUxNkHYdn+xKSZ6D5tPuc+zIlcayhoJC9ptb6xnxmYUD66mqzSqXHZMZ6qGRz7Q/g==
   dependencies:
     "@emotion/react" "^11.11.0"
     "@emotion/styled" "^11.11.0"
