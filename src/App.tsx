@@ -4,10 +4,11 @@ import {
   ModalProvider,
   ThemeProvider,
   ToastProvider,
-  Typography,
 } from '@imspdr/ui';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import HomePage from './pages/Home';
+import HeaderLinks from './components/HeaderLinks';
+import MainCenterWrapper from './components/MainCenterWrapper';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -35,8 +36,10 @@ const App: FC = () => {
 
 const AppLayout: FC = () => {
   return (
-    <Layout title="IMSPDR">
-      <HomePage />
+    <Layout title="IMSPDR" middleContent={<HeaderLinks />}>
+      <MainCenterWrapper>
+        <HomePage />
+      </MainCenterWrapper>
     </Layout>
   );
 };
