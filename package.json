@@ -1,6 +1,6 @@
 {
   "name": "imspdr-shell",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "impsdr projects shell",
   "homepage": "https://imspdr.github.io/",
   "scripts": {
@@ -10,7 +10,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
-    "@imspdr/ui": "^1.0.5",
+    "@imspdr/ui": "^1.0.6",
     "@tanstack/react-query": "^5.90.16",
     "axios": "^1.13.2",
     "react": "^18.2.0",

@@ -6,7 +6,7 @@ export const MainCenterWrapper = styled.div`
   width: 100%;
   box-sizing: border-box;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     padding: 0;
   }
 `;

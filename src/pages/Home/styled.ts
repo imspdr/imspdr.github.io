@@ -2,19 +2,36 @@ import styled from '@emotion/styled';
 
 export const HomeContainer = styled.div`
   display: flex;
-  align-items: flex-start;
-  gap: 24px;
+  flex-direction: column;
   padding: 24px;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
+  @media (max-width: 767px) {
     padding: 16px;
   }
 `;
 
+export const DesktopView = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+`;
+
+export const MobileView = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+`;
+
+export const MobileWidgetGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+`;
+
 export const LeftContent = styled.div`
   flex-shrink: 0;
-  /* kospi200 컴포넌트 고유 너비 유지 */
 `;
 
 export const RightContent = styled.div`

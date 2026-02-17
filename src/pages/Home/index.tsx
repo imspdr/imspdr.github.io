@@ -1,5 +1,5 @@
 import { FC, Suspense } from 'react';
-import { Typography } from '@imspdr/ui';
+import { Typography, useDeviceType } from '@imspdr/ui';
 import {
   HomeContainer,
   LeftContent,
@@ -7,12 +7,22 @@ import {
   WidgetWrapper,
   JapWordSpecificWrapper,
   LoadingWrapper,
+  DesktopView,
+  MobileView,
+  MobileWidgetGrid,
 } from './styled';
 import { useHome } from './useHome';
 
 const HomePage: FC = () => {
-  const { widgets } = useHome();
-  const { LatestBanner, TodaysWord, TopRankingSection } = widgets;
+  const { isPc } = useDeviceType();
+  const {
+    LatestBanner,
+    MiniVideoWidget,
+    TodaysWord,
+    MiniWordWidget,
+    TopRankingSection,
+    MiniStockWidget
+  } = useHome();
 
   const LoadingFallback = (
     <LoadingWrapper>
@@ -24,26 +34,42 @@ const HomePage: FC = () => {
 
   return (
     <HomeContainer>
-
-      <LeftContent>
-        <Suspense fallback={LoadingFallback}>
-          <TopRankingSection />
-        </Suspense>
-      </LeftContent>
-      <RightContent>
-        <WidgetWrapper>
-          <Suspense fallback={LoadingFallback}>
-            <LatestBanner />
-          </Suspense>
-        </WidgetWrapper>
-        <JapWordSpecificWrapper>
-          <Suspense fallback={LoadingFallback}>
-            <TodaysWord />
-          </Suspense>
-        </JapWordSpecificWrapper>
-      </RightContent>
-
-    </HomeContainer>
+      {isPc ? (
+        <DesktopView>
+          <LeftContent>
+            <Suspense fallback={LoadingFallback}>
+              <TopRankingSection />
+            </Suspense>
+          </LeftContent>
+          <RightContent>
+            <WidgetWrapper>
+              <Suspense fallback={LoadingFallback}>
+                <LatestBanner />
+              </Suspense>
+            </WidgetWrapper>
+            <JapWordSpecificWrapper>
+              <Suspense fallback={LoadingFallback}>
+                <TodaysWord />
+              </Suspense>
+            </JapWordSpecificWrapper>
+          </RightContent>
+        </DesktopView>
+      ) : (
+        < MobileView >
+          <MobileWidgetGrid>
+            <Suspense fallback={<div />}>
+              <MiniStockWidget />
+            </Suspense>
+            <Suspense fallback={<div />}>
+              <MiniWordWidget />
+            </Suspense>
+            <Suspense fallback={<div />}>
+              <MiniVideoWidget />
+            </Suspense>
+          </MobileWidgetGrid>
+        </MobileView>)
+      }
+    </HomeContainer >
   );
 };
 
