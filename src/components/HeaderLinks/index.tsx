@@ -20,14 +20,14 @@ const HeaderLinks: FC = () => {
         size="sm"
         onClick={handleGithubClick}
         leftIcon={<FaGithub size={20} />}
-        color="var(--foreground-1)"
+        color="foreground.1"
       />
       <Button
         variant="ghost"
         size="sm"
         onClick={handleStorybookClick}
         leftIcon={<SiStorybook size={20} />}
-        color="var(--foreground-1)"
+        color="foreground.1"
       />
     </LinksContainer>
   );

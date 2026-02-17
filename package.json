@@ -1,6 +1,6 @@
 {
   "name": "imspdr-shell",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "impsdr projects shell",
   "homepage": "https://imspdr.github.io/",
   "scripts": {
