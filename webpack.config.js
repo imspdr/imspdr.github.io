@@ -46,6 +46,7 @@ module.exports = (env, argv) => {
           kospi200: 'kospi200@https://imspdr.github.io/kospi200/remoteEntry.js',
           japword: 'japword@https://imspdr.github.io/japword/remoteEntry.js',
           newvideo: 'newvideo@https://imspdr.github.io/new-video/remoteEntry.js',
+          findjiroi: 'findjiroi@https://imspdr.github.io/find-jiroi/remoteEntry.js',
         },
         shared: {
           react: { singleton: true, requiredVersion: deps.react },

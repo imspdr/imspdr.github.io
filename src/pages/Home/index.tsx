@@ -6,6 +6,8 @@ import {
   RightContent,
   WidgetWrapper,
   JapWordSpecificWrapper,
+  BottomRow,
+  MinesweeperWrapper,
   LoadingWrapper,
   DesktopView,
   MobileView,
@@ -21,7 +23,9 @@ const HomePage: FC = () => {
     TodaysWord,
     MiniWordWidget,
     TopRankingSection,
-    MiniStockWidget
+    MiniStockWidget,
+    MiniMinesweeperWidget,
+    MiniMinesweeperMobileWidget,
   } = useHome();
 
   const LoadingFallback = (
@@ -47,15 +51,22 @@ const HomePage: FC = () => {
                 <LatestBanner />
               </Suspense>
             </WidgetWrapper>
-            <JapWordSpecificWrapper>
-              <Suspense fallback={LoadingFallback}>
-                <TodaysWord />
-              </Suspense>
-            </JapWordSpecificWrapper>
+            <BottomRow>
+              <JapWordSpecificWrapper>
+                <Suspense fallback={LoadingFallback}>
+                  <TodaysWord />
+                </Suspense>
+              </JapWordSpecificWrapper>
+              <MinesweeperWrapper>
+                <Suspense fallback={<div />}>
+                  <MiniMinesweeperWidget />
+                </Suspense>
+              </MinesweeperWrapper>
+            </BottomRow>
           </RightContent>
         </DesktopView>
       ) : (
-        < MobileView >
+        <MobileView>
           <MobileWidgetGrid>
             <Suspense fallback={<div />}>
               <MiniStockWidget />
@@ -66,10 +77,13 @@ const HomePage: FC = () => {
             <Suspense fallback={<div />}>
               <MiniVideoWidget />
             </Suspense>
+            <Suspense fallback={<div />}>
+              <MiniMinesweeperMobileWidget />
+            </Suspense>
           </MobileWidgetGrid>
         </MobileView>)
       }
-    </HomeContainer >
+    </HomeContainer>
   );
 };
 

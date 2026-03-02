@@ -4,3 +4,4 @@ declare module 'japword/TodaysWord';
 declare module 'japword/MiniWordWidget';
 declare module 'newvideo/LatestBanner';
 declare module 'newvideo/MiniVideoWidget';
+declare module 'findjiroi/MiniMinesweeperWidget';
